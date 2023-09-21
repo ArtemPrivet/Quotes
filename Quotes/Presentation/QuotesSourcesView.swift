@@ -16,7 +16,7 @@ struct QuotesSourcesView: View {
 
             List(viewModel.quoteSources, id: \.id) { source in
                 NavigationLink {
-                    QuoteLoaderView<QuoteLoaderViewModel>(source: source)
+                    LinkPresenter { QuoteLoaderView<QuoteLoaderViewModel>(source: source) }
                 } label: {
                     QuoteSourceCell(source: source)
                 }

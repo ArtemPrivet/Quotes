@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-final class KanyeWestQuoteLoader: QuoteLoaderProtocol {
-    @Published private var quote: QuoteModel?
-    var quotePublisher: Published<QuoteModel?>.Publisher { $quote }
+final class KanyeWestQuoteLoader<T: Decodable>: QuoteLoaderProtocol {
+    @Published private var quote: String?
+    var quotePublisher: Published<String?>.Publisher { $quote }
 
     @Published private var isLoading: Bool = false
     var isLoadingPublisher: Published<Bool>.Publisher { $isLoading }
@@ -18,7 +18,7 @@ final class KanyeWestQuoteLoader: QuoteLoaderProtocol {
     private var cancellables: Set<AnyCancellable> = []
     private let url: String
 
-    private let networking = Networking<QuoteModel>()
+    private let networking = Networking<T>()
 
     init(url: String) {
         self.url = url
@@ -32,7 +32,13 @@ final class KanyeWestQuoteLoader: QuoteLoaderProtocol {
                 self?.isLoading = false
                 print(completion)
             } receiveValue: { [weak self] quote in
-                self?.quote = quote
+                if let _quote = quote as? KanyeQuoteModel {
+                    self?.quote = _quote.quote
+                } else if let _quote = quote as? [QuotableQuoteModel] {
+                    self?.quote = _quote.first?.content
+                } else {
+                    self?.quote = nil
+                }
             }
             .store(in: &cancellables)
     }

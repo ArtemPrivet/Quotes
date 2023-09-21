@@ -19,11 +19,13 @@
 		00F16F9A2ABBA90F0021D4DD /* QuotesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F992ABBA90F0021D4DD /* QuotesTabView.swift */; };
 		00F16F9C2ABBAA390021D4DD /* QuoteLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */; };
 		00F16F9E2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */; };
-		00F16FA02ABBBB5E0021D4DD /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */; };
+		00F16FA02ABBBB5E0021D4DD /* KanyeQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9F2ABBBB5E0021D4DD /* KanyeQuoteModel.swift */; };
 		00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */; };
 		00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */; };
 		00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA62ABCA8C90021D4DD /* Networking.swift */; };
 		00F16FA92ABCABB00021D4DD /* QuoteSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA82ABCABB00021D4DD /* QuoteSourceViewModel.swift */; };
+		00F16FAB2ABD017A0021D4DD /* QuotableQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */; };
+		00F16FAE2ABD07170021D4DD /* LinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +61,13 @@
 		00F16F992ABBA90F0021D4DD /* QuotesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabView.swift; sourceTree = "<group>"; };
 		00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderProtocol.swift; sourceTree = "<group>"; };
 		00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeWestQuoteLoader.swift; sourceTree = "<group>"; };
-		00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		00F16F9F2ABBBB5E0021D4DD /* KanyeQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeQuoteModel.swift; sourceTree = "<group>"; };
 		00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderView.swift; sourceTree = "<group>"; };
 		00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderViewModel.swift; sourceTree = "<group>"; };
 		00F16FA62ABCA8C90021D4DD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		00F16FA82ABCABB00021D4DD /* QuoteSourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSourceViewModel.swift; sourceTree = "<group>"; };
+		00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotableQuoteModel.swift; sourceTree = "<group>"; };
+		00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00F16FAC2ABD07100021D4DD /* Helpers */,
 				00F16FA52ABC6E250021D4DD /* ViewModels */,
 				00F16F962ABBA8070021D4DD /* Models */,
 				00F16F932ABBA7280021D4DD /* Presentation */,
@@ -175,7 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				00F16F972ABBA8140021D4DD /* QuoteSourceModel.swift */,
-				00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */,
+				00F16F9F2ABBBB5E0021D4DD /* KanyeQuoteModel.swift */,
+				00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +193,14 @@
 				00F16FA82ABCABB00021D4DD /* QuoteSourceViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		00F16FAC2ABD07100021D4DD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +339,9 @@
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
 				00F16FA92ABCABB00021D4DD /* QuoteSourceViewModel.swift in Sources */,
 				00F16F982ABBA8140021D4DD /* QuoteSourceModel.swift in Sources */,
-				00F16FA02ABBBB5E0021D4DD /* QuoteModel.swift in Sources */,
+				00F16FAE2ABD07170021D4DD /* LinkPresenter.swift in Sources */,
+				00F16FA02ABBBB5E0021D4DD /* KanyeQuoteModel.swift in Sources */,
+				00F16FAB2ABD017A0021D4DD /* QuotableQuoteModel.swift in Sources */,
 				00F16F692ABBA6E40021D4DD /* QuotesApp.swift in Sources */,
 				00F16F9C2ABBAA390021D4DD /* QuoteLoaderProtocol.swift in Sources */,
 				00F16F952ABBA74E0021D4DD /* QuoteSourceCell.swift in Sources */,

@@ -22,7 +22,6 @@ class QuoteLoaderViewModel {
     private let loader: any QuoteLoaderProtocol
     @Published private(set) var quote: String?
     @Published private(set) var title: String
-    @Published var quoteModel: QuoteModel?
     @Published var showLoading: Bool = false
 
     private var cancellables: Set<AnyCancellable> = []
@@ -30,13 +29,14 @@ class QuoteLoaderViewModel {
     init(source: QuoteSourceModel) {
         switch source.source {
         case .kanye(let url):
-            self.loader = KanyeWestQuoteLoader(url: url)
+            self.loader = KanyeWestQuoteLoader<KanyeQuoteModel>(url: url)
+        case .quotable(let url):
+            self.loader = KanyeWestQuoteLoader<[QuotableQuoteModel]>(url: url)
         }
 
         title = source.name
 
         loader.quotePublisher
-            .map { $0?.quote }
             .sink { [weak self] value in
                 self?.quote = value
             }
@@ -47,6 +47,10 @@ class QuoteLoaderViewModel {
                 self?.showLoading = isLoading
             }
             .store(in: &cancellables)
+    }
+
+    deinit {
+        print(self)
     }
 }
 

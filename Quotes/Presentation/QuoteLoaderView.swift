@@ -12,7 +12,7 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
     @ObservedObject var viewModel: T
 
     init(source: QuoteSourceModel) {
-        self.viewModel = QuoteLoaderViewModel(source: source) as! T
+        viewModel = QuoteLoaderViewModel(source: source) as! T
     }
 
     var body: some View {
