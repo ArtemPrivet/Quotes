@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuoteSourceCell: View {
-    @State var source = QuoteSourceModel(name: "test", id: 11, imageName: "test")
+    @State var source = QuoteSourceModel(name: "test", id: 11, imageName: "test", link: "")
     var body: some View {
         HStack {
             Image(source.imageName)

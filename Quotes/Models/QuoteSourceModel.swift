@@ -11,4 +11,5 @@ struct QuoteSourceModel {
     let name: String
     let id: Int
     let imageName: String
+    let link: String
 }

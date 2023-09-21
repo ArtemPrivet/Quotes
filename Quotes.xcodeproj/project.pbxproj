@@ -22,6 +22,7 @@
 		00F16FA02ABBBB5E0021D4DD /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */; };
 		00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */; };
 		00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */; };
+		00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA62ABCA8C90021D4DD /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderView.swift; sourceTree = "<group>"; };
 		00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderViewModel.swift; sourceTree = "<group>"; };
+		00F16FA62ABCA8C90021D4DD /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */,
 				00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */,
+				00F16FA62ABCA8C90021D4DD /* Networking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F16F6B2ABBA6E40021D4DD /* ContentView.swift in Sources */,
+				00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */,
 				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
 				00F16F982ABBA8140021D4DD /* QuoteSourceModel.swift in Sources */,

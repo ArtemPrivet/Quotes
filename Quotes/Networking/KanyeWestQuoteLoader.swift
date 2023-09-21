@@ -16,15 +16,13 @@ final class KanyeWestQuoteLoader: QuoteLoaderProtocol {
     var isLoadingPublisher: Published<Bool>.Publisher { $isLoading }
 
     private var cancellables: Set<AnyCancellable> = []
-    private let url = URL(string: "https://api.kanye.rest")!
+    private let url = "https://api.kanye.rest"
 
+    private let networking = Networking<QuoteModel>()
 
     func loadQuote() {
         isLoading = true
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: QuoteModel.self, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
+        networking.loadQuote(url: self.url)
             .sink { [weak self] completion in
                 self?.isLoading = false
                 print(completion)
