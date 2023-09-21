@@ -14,6 +14,14 @@
 		00F16F7A2ABBA6E60021D4DD /* QuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F792ABBA6E60021D4DD /* QuotesTests.swift */; };
 		00F16F842ABBA6E60021D4DD /* QuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F832ABBA6E60021D4DD /* QuotesUITests.swift */; };
 		00F16F862ABBA6E60021D4DD /* QuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F852ABBA6E60021D4DD /* QuotesUITestsLaunchTests.swift */; };
+		00F16F952ABBA74E0021D4DD /* QuoteSourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F942ABBA74E0021D4DD /* QuoteSourceCell.swift */; };
+		00F16F982ABBA8140021D4DD /* QuoteSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F972ABBA8140021D4DD /* QuoteSourceModel.swift */; };
+		00F16F9A2ABBA90F0021D4DD /* QuotesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F992ABBA90F0021D4DD /* QuotesTabView.swift */; };
+		00F16F9C2ABBAA390021D4DD /* QuoteLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */; };
+		00F16F9E2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */; };
+		00F16FA02ABBBB5E0021D4DD /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */; };
+		00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */; };
+		00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		00F16F7F2ABBA6E60021D4DD /* QuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F16F832ABBA6E60021D4DD /* QuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesUITests.swift; sourceTree = "<group>"; };
 		00F16F852ABBA6E60021D4DD /* QuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		00F16F942ABBA74E0021D4DD /* QuoteSourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSourceCell.swift; sourceTree = "<group>"; };
+		00F16F972ABBA8140021D4DD /* QuoteSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSourceModel.swift; sourceTree = "<group>"; };
+		00F16F992ABBA90F0021D4DD /* QuotesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTabView.swift; sourceTree = "<group>"; };
+		00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderProtocol.swift; sourceTree = "<group>"; };
+		00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeWestQuoteLoader.swift; sourceTree = "<group>"; };
+		00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderView.swift; sourceTree = "<group>"; };
+		00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +110,14 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00F16F962ABBA8070021D4DD /* Models */,
+				00F16F932ABBA7280021D4DD /* Presentation */,
+				00F16F922ABBA71D0021D4DD /* Networking */,
 				00F16F682ABBA6E40021D4DD /* QuotesApp.swift */,
 				00F16F6A2ABBA6E40021D4DD /* ContentView.swift */,
 				00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */,
 				00F16F6E2ABBA6E50021D4DD /* Preview Content */,
+				00F16FA52ABC6E250021D4DD /* ViewModels */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -125,6 +145,42 @@
 				00F16F852ABBA6E60021D4DD /* QuotesUITestsLaunchTests.swift */,
 			);
 			path = QuotesUITests;
+			sourceTree = "<group>";
+		};
+		00F16F922ABBA71D0021D4DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				00F16F9B2ABBAA390021D4DD /* QuoteLoaderProtocol.swift */,
+				00F16F9D2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		00F16F932ABBA7280021D4DD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				00F16F942ABBA74E0021D4DD /* QuoteSourceCell.swift */,
+				00F16F992ABBA90F0021D4DD /* QuotesTabView.swift */,
+				00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		00F16F962ABBA8070021D4DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				00F16F972ABBA8140021D4DD /* QuoteSourceModel.swift */,
+				00F16F9F2ABBBB5E0021D4DD /* QuoteModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		00F16FA52ABC6E250021D4DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				00F16FA32ABC6E200021D4DD /* QuoteLoaderViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F16F6B2ABBA6E40021D4DD /* ContentView.swift in Sources */,
+				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
+				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
+				00F16F982ABBA8140021D4DD /* QuoteSourceModel.swift in Sources */,
+				00F16FA02ABBBB5E0021D4DD /* QuoteModel.swift in Sources */,
 				00F16F692ABBA6E40021D4DD /* QuotesApp.swift in Sources */,
+				00F16F9C2ABBAA390021D4DD /* QuoteLoaderProtocol.swift in Sources */,
+				00F16F952ABBA74E0021D4DD /* QuoteSourceCell.swift in Sources */,
+				00F16F9A2ABBA90F0021D4DD /* QuotesTabView.swift in Sources */,
+				00F16F9E2ABBB85E0021D4DD /* KanyeWestQuoteLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
