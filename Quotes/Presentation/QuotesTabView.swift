@@ -14,7 +14,7 @@ struct QuotesTabView: View {
                 .tabItem {
                     Label("Quotes", systemImage: "quote.bubble")
                 }
-            QuoteLoaderView(loader: KanyeWestQuoteLoader())
+            QuoteLoaderView(viewModel: QuoteLoaderViewModel(loader: KanyeWestQuoteLoader()))
                 .tabItem {
                     Label("Favourite", systemImage: "heart.square")
                 }

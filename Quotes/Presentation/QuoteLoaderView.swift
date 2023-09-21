@@ -8,30 +8,41 @@
 import SwiftUI
 import Combine
 
-struct QuoteLoaderView<T: QuoteLoaderProtocol>: View {
-    @ObservedObject var loader: T
+struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
+    @ObservedObject var viewModel: T
 
-    init(loader: T) {
-        self.loader = loader
+    init(viewModel: T) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(loader.quote?.quote ?? "No quote")
-                .padding()
+            Spacer()
+
+            if viewModel.showLoading {
+                ProgressView()
+            } else {
+                Text(viewModel.quote ?? "")
+                    .padding()
+            }
+
+            Spacer()
 
             Button("Reload") {
-                loader.loadQuote()
+                viewModel.reloadQuote()
             }
+            .disabled(viewModel.showLoading)
         }
         .onAppear {
-            loader.loadQuote()
+            if viewModel.shouldLoadQuote {
+                viewModel.reloadQuote()
+            }
         }
     }
 }
 
 struct QuoteLoaderView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteLoaderView<KanyeWestQuoteLoader>(loader: KanyeWestQuoteLoader())
+        QuoteLoaderView(viewModel: QuoteLoaderViewModel(loader: KanyeWestQuoteLoader()))
     }
 }

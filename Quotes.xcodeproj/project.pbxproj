@@ -110,6 +110,7 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00F16FA52ABC6E250021D4DD /* ViewModels */,
 				00F16F962ABBA8070021D4DD /* Models */,
 				00F16F932ABBA7280021D4DD /* Presentation */,
 				00F16F922ABBA71D0021D4DD /* Networking */,
@@ -117,7 +118,6 @@
 				00F16F6A2ABBA6E40021D4DD /* ContentView.swift */,
 				00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */,
 				00F16F6E2ABBA6E50021D4DD /* Preview Content */,
-				00F16FA52ABC6E250021D4DD /* ViewModels */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";

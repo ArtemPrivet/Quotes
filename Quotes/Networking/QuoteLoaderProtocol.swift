@@ -8,7 +8,8 @@
 import Foundation
 
 protocol QuoteLoaderProtocol: ObservableObject {
-    var quote: QuoteModel? { get }
+    var quotePublisher: Published<QuoteModel?>.Publisher { get }
+    var isLoadingPublisher: Published<Bool>.Publisher { get }
 
     func loadQuote()
 }
