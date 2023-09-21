@@ -11,5 +11,9 @@ struct QuoteSourceModel {
     let name: String
     let id: Int
     let imageName: String
-    let link: String
+    let source: QuoteSourceType
+}
+
+enum QuoteSourceType {
+    case kanye(String)
 }

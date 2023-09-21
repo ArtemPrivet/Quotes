@@ -10,6 +10,7 @@ import Combine
 
 protocol QuoteLoaderViewModelProtocol: ObservableObject {
     var quote: String? { get }
+    var title: String { get }
     var shouldLoadQuote: Bool { get }
     var showLoading: Bool { get }
 
@@ -17,16 +18,22 @@ protocol QuoteLoaderViewModelProtocol: ObservableObject {
     func reloadQuote()
 }
 
-class QuoteLoaderViewModel<T: QuoteLoaderProtocol>: ObservableObject {
-    @ObservedObject var loader: T
+class QuoteLoaderViewModel {
+    private let loader: any QuoteLoaderProtocol
     @Published private(set) var quote: String?
+    @Published private(set) var title: String
     @Published var quoteModel: QuoteModel?
     @Published var showLoading: Bool = false
 
     private var cancellables: Set<AnyCancellable> = []
 
-    init(loader: T) {
-        self.loader = loader
+    init(source: QuoteSourceModel) {
+        switch source.source {
+        case .kanye(let url):
+            self.loader = KanyeWestQuoteLoader(url: url)
+        }
+
+        title = source.name
 
         loader.quotePublisher
             .map { $0?.quote }

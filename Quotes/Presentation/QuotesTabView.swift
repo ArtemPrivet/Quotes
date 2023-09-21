@@ -10,15 +10,15 @@ import SwiftUI
 struct QuotesTabView: View {
     var body: some View {
         TabView {
-            ContentView()
+            QuotesSourcesView()
                 .tabItem {
                     Label("Quotes", systemImage: "quote.bubble")
                 }
-            QuoteLoaderView(viewModel: QuoteLoaderViewModel(loader: KanyeWestQuoteLoader()))
+            QuotesSourcesView()
                 .tabItem {
                     Label("Favourite", systemImage: "heart.square")
                 }
-            ContentView()
+            QuotesSourcesView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

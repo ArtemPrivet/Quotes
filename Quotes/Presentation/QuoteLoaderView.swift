@@ -11,8 +11,8 @@ import Combine
 struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
     @ObservedObject var viewModel: T
 
-    init(viewModel: T) {
-        self.viewModel = viewModel
+    init(source: QuoteSourceModel) {
+        self.viewModel = QuoteLoaderViewModel(source: source) as! T
     }
 
     var body: some View {
@@ -33,6 +33,7 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
             }
             .disabled(viewModel.showLoading)
         }
+        .navigationTitle(viewModel.title)
         .onAppear {
             if viewModel.shouldLoadQuote {
                 viewModel.reloadQuote()
@@ -43,6 +44,6 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
 
 struct QuoteLoaderView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteLoaderView(viewModel: QuoteLoaderViewModel(loader: KanyeWestQuoteLoader()))
+        QuoteLoaderView<QuoteLoaderViewModel>(source: QuoteSourceModel(name: "Kanye West", id: 0, imageName: "kanye", source: .kanye("https://api.kanye.rest")))
     }
 }
