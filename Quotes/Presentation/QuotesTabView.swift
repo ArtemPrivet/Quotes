@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct QuotesTabView: View {
+    @State private var tabSelection = 0
+
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection) {
             QuotesSourcesView()
                 .tabItem {
                     Label("Quotes", systemImage: "quote.bubble")
                 }
-            QuotesSourcesView()
+                .tag(0)
+            FavouriteQuotesView(tabSelection: $tabSelection)
                 .tabItem {
                     Label("Favourite", systemImage: "heart.square")
                 }
+                .tag(1)
             QuotesSourcesView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
+                .tag(2)
         }
     }
 }

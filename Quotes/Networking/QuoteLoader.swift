@@ -1,5 +1,5 @@
 //
-//  KanyeWestQuoteLoader.swift
+//  QuoteLoader.swift
 //  Quotes
 //
 //  Created by Artem Orlov on 20.09.23.
@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-final class KanyeWestQuoteLoader<T: Decodable>: QuoteLoaderProtocol {
-    @Published private var quote: String?
-    var quotePublisher: Published<String?>.Publisher { $quote }
+final class QuoteLoader<T: Decodable>: QuoteLoaderProtocol {
+    @Published private var quote: QuoteModel?
+    var quotePublisher: Published<QuoteModel?>.Publisher { $quote }
 
     @Published private var isLoading: Bool = false
     var isLoadingPublisher: Published<Bool>.Publisher { $isLoading }
@@ -32,15 +32,7 @@ final class KanyeWestQuoteLoader<T: Decodable>: QuoteLoaderProtocol {
                 self?.isLoading = false
                 print(completion)
             } receiveValue: { [weak self] quote in
-                if let _quote = quote as? KanyeQuoteModel {
-                    self?.quote = _quote.quote
-                } else if let _quote = quote as? [QuotableQuoteModel] {
-                    self?.quote = _quote.first?.content
-                } else if let _quote = quote as? [BreakingBadQuoteModel] {
-                    self?.quote = _quote.first?.quote
-                } else {
-                    self?.quote = nil
-                }
+                self?.quote = QuoteModel(model: quote)
             }
             .store(in: &cancellables)
     }

@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 protocol QuoteLoaderViewModelProtocol: ObservableObject {
-    var quote: String? { get }
+    var quote: QuoteModel? { get }
     var title: String { get }
     var shouldLoadQuote: Bool { get }
     var showLoading: Bool { get }
@@ -20,7 +20,7 @@ protocol QuoteLoaderViewModelProtocol: ObservableObject {
 
 class QuoteLoaderViewModel {
     private let loader: any QuoteLoaderProtocol
-    @Published private(set) var quote: String?
+    @Published private(set) var quote: QuoteModel?
     @Published private(set) var title: String
     @Published var showLoading: Bool = false
 
@@ -29,11 +29,11 @@ class QuoteLoaderViewModel {
     init(source: QuoteSourceModel) {
         switch source.source {
         case .kanye(let url):
-            self.loader = KanyeWestQuoteLoader<KanyeQuoteModel>(url: url)
+            self.loader = QuoteLoader<KanyeQuoteModel>(url: url)
         case .quotable(let url):
-            self.loader = KanyeWestQuoteLoader<[QuotableQuoteModel]>(url: url)
+            self.loader = QuoteLoader<[QuotableQuoteModel]>(url: url)
         case .breakingBad(let url):
-            self.loader = KanyeWestQuoteLoader<[BreakingBadQuoteModel]>(url: url)
+            self.loader = QuoteLoader<[BreakingBadQuoteModel]>(url: url)
         }
 
         title = source.name

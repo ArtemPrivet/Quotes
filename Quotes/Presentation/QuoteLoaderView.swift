@@ -19,26 +19,52 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
         VStack(spacing: 20) {
             Spacer()
 
-            if viewModel.showLoading {
+            if viewModel.showLoading  {
                 ProgressView()
             } else {
-                Text(viewModel.quote ?? "")
-                    .padding()
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(.blue, lineWidth: 2)
-                        )
-                    .padding()
+                VStack {
+                    Text(viewModel.quote?.quote ?? "")
+                        .padding()
+                        .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(.blue, lineWidth: 2)
+                            )
+                        .padding()
+                    Text("–" + (viewModel.quote?.author ?? ""))
+                }
             }
 
             Spacer()
 
-            Button("Reload") {
-                viewModel.reloadQuote()
+            HStack(spacing: 50) {
+                Button {
+                    viewModel.reloadQuote()
+                } label: {
+                    HStack(spacing: 5) {
+                        Text("Reload")
+                            .fontWeight(.bold)
+                        Image(systemName: "arrow.clockwise.circle")
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(viewModel.showLoading)
+                .padding(.bottom, 8)
+
+                Button {
+                    viewModel.saveQuote()
+                } label: {
+                    HStack(spacing: 5) {
+                        Text("Save")
+                            .fontWeight(.bold)
+                        Image(systemName: "heart.fill")
+                    }
+                }
+                .tint(.green)
+                .buttonStyle(.borderedProminent)
+                .disabled(viewModel.showLoading)
+                .padding(.bottom, 8)
+
             }
-            .buttonStyle(.borderedProminent)
-            .disabled(viewModel.showLoading)
-            .padding(.bottom, 8)
         }
         .navigationTitle(viewModel.title)
         .onAppear {
