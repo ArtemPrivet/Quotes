@@ -21,7 +21,7 @@ extension QuoteSourceViewModel: QuoteSourceViewModelProtocol {
         quoteSources = [
             QuoteSourceModel(name: "Kanye West", id: 0, imageName: "kanye", source: .kanye("https://api.kanye.rest")),
             QuoteSourceModel(name: "Quotable", id: 1, imageName: "quotable", source: .quotable("https://api.quotable.io/quotes/random")),
-            QuoteSourceModel(name: "Kanye West", id: 2, imageName: "kanye", source: .kanye("https://api.kanye.rest")),
+            QuoteSourceModel(name: "Breaking Bad", id: 2, imageName: "breaking_bad", source: .breakingBad("https://api.breakingbadquotes.xyz/v1/quotes")),
             QuoteSourceModel(name: "Kanye West", id: 3, imageName: "kanye", source: .kanye("https://api.kanye.rest")),
         ]
     }

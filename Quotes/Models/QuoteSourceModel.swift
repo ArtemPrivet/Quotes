@@ -17,4 +17,5 @@ struct QuoteSourceModel {
 enum QuoteSourceType {
     case kanye(String)
     case quotable(String)
+    case breakingBad(String)
 }

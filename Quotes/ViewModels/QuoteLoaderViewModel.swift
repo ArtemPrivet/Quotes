@@ -32,6 +32,8 @@ class QuoteLoaderViewModel {
             self.loader = KanyeWestQuoteLoader<KanyeQuoteModel>(url: url)
         case .quotable(let url):
             self.loader = KanyeWestQuoteLoader<[QuotableQuoteModel]>(url: url)
+        case .breakingBad(let url):
+            self.loader = KanyeWestQuoteLoader<[BreakingBadQuoteModel]>(url: url)
         }
 
         title = source.name

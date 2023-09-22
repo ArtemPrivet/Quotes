@@ -36,6 +36,8 @@ final class KanyeWestQuoteLoader<T: Decodable>: QuoteLoaderProtocol {
                     self?.quote = _quote.quote
                 } else if let _quote = quote as? [QuotableQuoteModel] {
                     self?.quote = _quote.first?.content
+                } else if let _quote = quote as? [BreakingBadQuoteModel] {
+                    self?.quote = _quote.first?.quote
                 } else {
                     self?.quote = nil
                 }

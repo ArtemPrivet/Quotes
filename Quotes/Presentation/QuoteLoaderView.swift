@@ -24,6 +24,11 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
             } else {
                 Text(viewModel.quote ?? "")
                     .padding()
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(.blue, lineWidth: 2)
+                        )
+                    .padding()
             }
 
             Spacer()
@@ -31,7 +36,9 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
             Button("Reload") {
                 viewModel.reloadQuote()
             }
+            .buttonStyle(.borderedProminent)
             .disabled(viewModel.showLoading)
+            .padding(.bottom, 8)
         }
         .navigationTitle(viewModel.title)
         .onAppear {
