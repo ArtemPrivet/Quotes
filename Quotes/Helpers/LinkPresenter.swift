@@ -10,18 +10,12 @@ import SwiftUI
 struct LinkPresenter<Content: View>: View {
     let content: () -> Content
 
-    @State private var invalidated = false
     init(@ViewBuilder _ content: @escaping () -> Content) {
         self.content = content
     }
     var body: some View {
         Group {
-            if self.invalidated {
-                EmptyView()
-            } else {
-                content()
-            }
+            content()
         }
-        .onDisappear { self.invalidated = true }
     }
 }

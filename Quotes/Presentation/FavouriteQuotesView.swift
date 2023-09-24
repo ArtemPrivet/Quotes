@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct FavouriteQuotesView: View {
+    @ObservedObject var vm = FavouriteQuotesModel()
     @Binding var tabSelection: Int
 
     var body: some View {
         NavigationView {
-            QuotesEmptyView(bodyText: "You have no favourite quotes", tabSelection: $tabSelection)
-                .navigationTitle("Favourites")
+            if vm.quotes.isEmpty {
+                QuotesEmptyView(bodyText: "You have no favourite quotes", tabSelection: $tabSelection)
+                    .navigationTitle("Favourites")
+            } else {
+                List(vm.quotes, id: \.quote) {
+                    Text($0.quote)
+                }
+            }
         }
     }
 }

@@ -50,10 +50,6 @@ class QuoteLoaderViewModel {
             }
             .store(in: &cancellables)
     }
-
-    deinit {
-        print(self)
-    }
 }
 
 extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
@@ -62,7 +58,8 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
     }
 
     func saveQuote() {
-        print("save quote: \(quote)")
+        guard let quote = quote else { return }
+        QuotesStorageService.shared.saveQuote(quote)
     }
 
     func reloadQuote() {

@@ -12,7 +12,7 @@ struct QuoteModel {
     let author: String
     let image: String?
 
-    private init(quote: String, author: String, image: String? = nil) {
+    init(quote: String, author: String, image: String? = nil) {
         self.quote = quote
         self.author = author
         self.image = image
