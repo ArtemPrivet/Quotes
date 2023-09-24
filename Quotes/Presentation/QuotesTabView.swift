@@ -22,7 +22,7 @@ struct QuotesTabView: View {
                     Label("Favourite", systemImage: "heart.square")
                 }
                 .tag(1)
-            QuotesSourcesView()
+            SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

@@ -16,6 +16,7 @@ protocol QuoteLoaderViewModelProtocol: ObservableObject {
 
     func saveQuote()
     func reloadQuote()
+    func playQuote()
 }
 
 class QuoteLoaderViewModel {
@@ -25,8 +26,13 @@ class QuoteLoaderViewModel {
     @Published var showLoading: Bool = false
 
     private var cancellables: Set<AnyCancellable> = []
+    private let speechRecognition: SpeechRecognitionProtocol
 
-    init(source: QuoteSourceModel) {
+    init(
+        source: QuoteSourceModel,
+        speechRecognition: SpeechRecognitionProtocol
+    ) {
+        self.speechRecognition = speechRecognition
         switch source.source {
         case .kanye(let url):
             self.loader = QuoteLoader<KanyeQuoteModel>(url: url)
@@ -64,5 +70,10 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
 
     func reloadQuote() {
         loader.loadQuote()
+    }
+
+    func playQuote() {
+        guard let quote = quote else { return }
+        speechRecognition.speak(text: quote.quote)
     }
 }

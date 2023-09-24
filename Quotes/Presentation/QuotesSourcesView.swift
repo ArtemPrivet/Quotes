@@ -13,7 +13,6 @@ struct QuotesSourcesView: View {
 
     var body: some View {
         NavigationView {
-
             List(viewModel.quoteSources, id: \.id) { source in
                 NavigationLink {
                     LinkPresenter { QuoteLoaderView<QuoteLoaderViewModel>(source: source) }

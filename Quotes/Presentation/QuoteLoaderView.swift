@@ -12,7 +12,7 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
     @ObservedObject var viewModel: T
 
     init(source: QuoteSourceModel) {
-        viewModel = QuoteLoaderViewModel(source: source) as! T
+        viewModel = QuoteLoaderViewModel(source: source, speechRecognition: SpeechRecognition()) as! T
     }
 
     var body: some View {
@@ -23,13 +23,21 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
                 ProgressView()
             } else {
                 VStack {
-                    Text(viewModel.quote?.quote ?? "")
-                        .padding()
-                        .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(.blue, lineWidth: 2)
-                            )
-                        .padding()
+                    HStack {
+                        Text(viewModel.quote?.quote ?? "")
+                            .padding()
+                            .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(.blue, lineWidth: 2)
+                                )
+                        Button {
+                            viewModel.playQuote()
+                        } label: {
+                            Image(systemName: "speaker.wave.2")
+                        }
+                        .padding(.leading, 8)
+                    }
+                    .padding()
                     Text("–" + (viewModel.quote?.author ?? ""))
                 }
             }

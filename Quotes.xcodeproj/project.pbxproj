@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */; };
+		00D1931F2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */; };
+		00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */; };
+		00D193232AC0B4DC0042E20B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193222AC0B4DC0042E20B /* SettingsView.swift */; };
+		00D193252AC0B5BB0042E20B /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193242AC0B5BB0042E20B /* SettingsModel.swift */; };
+		00D193272AC0B6E60042E20B /* VoiceRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193262AC0B6E60042E20B /* VoiceRecognitionView.swift */; };
 		00D3D5692ABDF6800004774C /* FavouriteQuotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D5682ABDF6800004774C /* FavouriteQuotesModel.swift */; };
 		00D3D56B2ABDF76C0004774C /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D56A2ABDF76C0004774C /* QuoteModel.swift */; };
 		00D3D56E2ABE153E0004774C /* QuotesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D56D2ABE153E0004774C /* QuotesEmptyView.swift */; };
@@ -56,6 +61,11 @@
 
 /* Begin PBXFileReference section */
 		004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuoteModel.swift; sourceTree = "<group>"; };
+		00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionProtocol.swift; sourceTree = "<group>"; };
+		00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		00D193222AC0B4DC0042E20B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		00D193242AC0B5BB0042E20B /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		00D193262AC0B6E60042E20B /* VoiceRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionView.swift; sourceTree = "<group>"; };
 		00D3D5682ABDF6800004774C /* FavouriteQuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteQuotesModel.swift; sourceTree = "<group>"; };
 		00D3D56A2ABDF76C0004774C /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		00D3D56D2ABE153E0004774C /* QuotesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesEmptyView.swift; sourceTree = "<group>"; };
@@ -113,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00D1931D2AC0B09A0042E20B /* SpeechRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */,
+			);
+			path = SpeechRecognition;
+			sourceTree = "<group>";
+		};
 		00D3D56C2ABE14E90004774C /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +165,7 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00D1931D2AC0B09A0042E20B /* SpeechRecognition */,
 				00D3D56C2ABE14E90004774C /* Storage */,
 				00F16FAC2ABD07100021D4DD /* Helpers */,
 				00F16FA52ABC6E250021D4DD /* ViewModels */,
@@ -204,6 +223,8 @@
 				00F16FA12ABBBBD30021D4DD /* QuoteLoaderView.swift */,
 				00D3D56D2ABE153E0004774C /* QuotesEmptyView.swift */,
 				00D3D56F2ABE18370004774C /* FavouriteQuotesView.swift */,
+				00D193222AC0B4DC0042E20B /* SettingsView.swift */,
+				00D193262AC0B6E60042E20B /* VoiceRecognitionView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -211,6 +232,7 @@
 		00F16F962ABBA8070021D4DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00D193242AC0B5BB0042E20B /* SettingsModel.swift */,
 				00F16F972ABBA8140021D4DD /* QuoteSourceModel.swift */,
 				00F16F9F2ABBBB5E0021D4DD /* KanyeQuoteModel.swift */,
 				00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */,
@@ -234,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */,
+				00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -373,6 +396,7 @@
 				00D3D5732ABE20730004774C /* QuotesData.xcdatamodeld in Sources */,
 				004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */,
 				00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */,
+				00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */,
 				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
 				00F16FA92ABCABB00021D4DD /* QuoteSourceViewModel.swift in Sources */,
@@ -382,15 +406,19 @@
 				00D3D57C2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift in Sources */,
 				00F16FAE2ABD07170021D4DD /* LinkPresenter.swift in Sources */,
 				00F16FA02ABBBB5E0021D4DD /* KanyeQuoteModel.swift in Sources */,
+				00D193252AC0B5BB0042E20B /* SettingsModel.swift in Sources */,
 				00F16FAB2ABD017A0021D4DD /* QuotableQuoteModel.swift in Sources */,
 				00F16F692ABBA6E40021D4DD /* QuotesApp.swift in Sources */,
 				00F16F9C2ABBAA390021D4DD /* QuoteLoaderProtocol.swift in Sources */,
+				00D1931F2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift in Sources */,
 				00D3D5692ABDF6800004774C /* FavouriteQuotesModel.swift in Sources */,
 				00F16F952ABBA74E0021D4DD /* QuoteSourceCell.swift in Sources */,
 				00D3D56E2ABE153E0004774C /* QuotesEmptyView.swift in Sources */,
 				00D3D5752ABE45C00004774C /* QuotesStorageService.swift in Sources */,
 				00F16F9A2ABBA90F0021D4DD /* QuotesTabView.swift in Sources */,
 				00F16F9E2ABBB85E0021D4DD /* QuoteLoader.swift in Sources */,
+				00D193232AC0B4DC0042E20B /* SettingsView.swift in Sources */,
+				00D193272AC0B6E60042E20B /* VoiceRecognitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
