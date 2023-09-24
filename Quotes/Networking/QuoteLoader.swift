@@ -31,6 +31,12 @@ final class QuoteLoader<T: Decodable>: QuoteLoaderProtocol {
             .sink { [weak self] completion in
                 self?.isLoading = false
                 print(completion)
+                switch completion {
+                case .failure:
+                    self?.quote = nil
+                default:
+                    break
+                }
             } receiveValue: { [weak self] quote in
                 self?.quote = QuoteModel(model: quote)
             }

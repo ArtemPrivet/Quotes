@@ -9,10 +9,11 @@ import SwiftUI
 import Combine
 
 protocol QuoteLoaderViewModelProtocol: ObservableObject {
-    var quote: QuoteModel? { get }
+    var quote: String { get }
     var title: String { get }
     var shouldLoadQuote: Bool { get }
     var showLoading: Bool { get }
+    var author: String { get }
 
     func saveQuote()
     func reloadQuote()
@@ -21,7 +22,7 @@ protocol QuoteLoaderViewModelProtocol: ObservableObject {
 
 class QuoteLoaderViewModel {
     private let loader: any QuoteLoaderProtocol
-    @Published private(set) var quote: QuoteModel?
+    private var quoteModel: QuoteModel?
     @Published private(set) var title: String
     @Published var showLoading: Bool = false
 
@@ -46,7 +47,7 @@ class QuoteLoaderViewModel {
 
         loader.quotePublisher
             .sink { [weak self] value in
-                self?.quote = value
+                self?.quoteModel = value
             }
             .store(in: &cancellables)
 
@@ -60,11 +61,19 @@ class QuoteLoaderViewModel {
 
 extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
     var shouldLoadQuote: Bool {
-        quote == nil
+        quoteModel == nil
+    }
+
+    var quote: String {
+        quoteModel?.quote ?? "Something went wrong"
+    }
+
+    var author: String {
+        "–" + (quoteModel?.author ?? "Unknown")
     }
 
     func saveQuote() {
-        guard let quote = quote else { return }
+        guard let quote = quoteModel else { return }
         QuotesStorageService.shared.saveQuote(quote)
     }
 
@@ -73,7 +82,7 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
     }
 
     func playQuote() {
-        guard let quote = quote else { return }
+        guard let quote = quoteModel else { return }
         speechRecognition.speak(text: quote.quote)
     }
 }

@@ -24,21 +24,23 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
             } else {
                 VStack {
                     HStack {
-                        Text(viewModel.quote?.quote ?? "")
+                        Text(viewModel.quote)
                             .padding()
                             .overlay(
                                     RoundedRectangle(cornerRadius: 12)
-                                        .stroke(.blue, lineWidth: 2)
+                                        .stroke(viewModel.shouldLoadQuote ? .red : .blue, lineWidth: 2)
                                 )
-                        Button {
-                            viewModel.playQuote()
-                        } label: {
-                            Image(systemName: "speaker.wave.2")
+                        if !viewModel.shouldLoadQuote {
+                            Button {
+                                viewModel.playQuote()
+                            } label: {
+                                Image(systemName: "speaker.wave.2")
+                            }
+                            .padding(.leading, 8)
                         }
-                        .padding(.leading, 8)
                     }
                     .padding()
-                    Text("–" + (viewModel.quote?.author ?? ""))
+                    Text(viewModel.author)
                 }
             }
 
