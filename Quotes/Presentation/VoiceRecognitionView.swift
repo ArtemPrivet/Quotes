@@ -11,11 +11,14 @@ struct VoiceRecognitionView: View {
     @AppStorage(UserDefaultsHelper.Keys.recognitionVoice.rawValue) private var voice = SpeechLanguage.enUS.rawValue
 
     var body: some View {
-        Picker("Voice", selection: $voice) {
-            ForEach(SpeechLanguage.allCases, id: \.rawValue) {
-                Text($0.rawValue)
+        Form {
+            Picker("Language", selection: $voice) {
+                ForEach(SpeechLanguage.allCases, id: \.rawValue) {
+                    Text($0.rawValue)
+                }
             }
         }
+        .navigationTitle("Voice recognition")
     }
 }
 

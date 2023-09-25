@@ -17,9 +17,13 @@ final class QuotesStorageService: ObservableObject {
 
     static let shared = QuotesStorageService()
 
-    private init() {
-        container.loadPersistentStores { _, error in
-            print(error)
+    private init(forPreview: Bool = false) {
+        if forPreview {
+            container.persistentStoreDescriptions.first!.url = URL(filePath: "/dev/null")
+        }
+        container.loadPersistentStores { _, _ in }
+        if forPreview {
+            addMockData(moc: container.viewContext)
         }
     }
 
@@ -41,5 +45,19 @@ final class QuotesStorageService: ObservableObject {
         guard let quoteToDelete = quotes.first(where: { $0.quote == quote.quote }) else { return }
         moc.delete(quoteToDelete)
         try? moc.save()
+    }
+
+    private func addMockData(moc: NSManagedObjectContext) {
+        let quote1 = QuoteDataModel(context: moc)
+        quote1.quote = "This is the first quote"
+        quote1.author = "Artem"
+
+        let quote2 = QuoteDataModel(context: moc)
+        quote2.quote = "This is the second quote"
+        quote2.author = "Artem"
+
+        let quote3 = QuoteDataModel(context: moc)
+        quote3.quote = "This is the third big quote This is the third big quote This is the third big quote This is the third big quote"
+        quote3.author = "Artem"
     }
 }

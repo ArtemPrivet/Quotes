@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
+    @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel: T
 
     init(source: QuoteSourceModel) {
@@ -61,7 +62,12 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
                 .padding(.bottom, 8)
 
                 Button {
-                    viewModel.saveQuote()
+                    let quoteModel = QuoteDataModel(context: moc)
+                    quoteModel.author = viewModel.author
+                    quoteModel.quote = viewModel.quote
+                    quoteModel.date = Date()
+                    try? moc.save()
+//                    viewModel.saveQuote()
                 } label: {
                     HStack(spacing: 5) {
                         Text("Save")

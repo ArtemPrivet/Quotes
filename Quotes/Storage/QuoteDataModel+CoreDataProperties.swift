@@ -24,5 +24,11 @@ extension QuoteDataModel {
 }
 
 extension QuoteDataModel : Identifiable {
+    var viewQuote: String {
+        quote ?? "Quote is empty"
+    }
 
+    var viewAuthor: String {
+        author ?? "Unknown"
+    }
 }

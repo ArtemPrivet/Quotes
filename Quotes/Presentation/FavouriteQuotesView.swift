@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct FavouriteQuotesView: View {
-    @ObservedObject var vm = FavouriteQuotesModel()
+//    @ObservedObject var vm = FavouriteQuotesModel()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: QuoteDataModel.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \QuoteDataModel.date, ascending: true)])
+    var quotes: FetchedResults<QuoteDataModel>
     @Binding var tabSelection: Int
 
     var body: some View {
         NavigationView {
-            if vm.quotes.isEmpty {
+            if quotes.isEmpty {
                 QuotesEmptyView(bodyText: "You have no favourite quotes", tabSelection: $tabSelection)
                     .navigationTitle("Favourites")
             } else {
-                List(vm.quotes, id: \.quote) {
-                    Text($0.quote)
+                List(quotes) {
+                    Text($0.viewQuote)
                 }
+                .navigationTitle("Favourites")
             }
         }
     }

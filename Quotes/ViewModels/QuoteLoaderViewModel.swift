@@ -73,8 +73,8 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
     }
 
     func saveQuote() {
-        guard let quote = quoteModel else { return }
-        QuotesStorageService.shared.saveQuote(quote)
+//        guard let quote = quoteModel else { return }
+//        QuotesStorageService.shared.saveQuote(quote)
     }
 
     func reloadQuote() {
