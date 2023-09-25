@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */; };
+		008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF50D2AC0D839005326B0 /* AppIcon.swift */; };
+		008FF5102AC0D931005326B0 /* ChangeAppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF50F2AC0D931005326B0 /* ChangeAppIconViewModel.swift */; };
+		008FF5122AC0D9E8005326B0 /* ChangeAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */; };
 		00D1931F2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */; };
 		00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */; };
 		00D193232AC0B4DC0042E20B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193222AC0B4DC0042E20B /* SettingsView.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuoteModel.swift; sourceTree = "<group>"; };
+		008FF50D2AC0D839005326B0 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		008FF50F2AC0D931005326B0 /* ChangeAppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewModel.swift; sourceTree = "<group>"; };
+		008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconView.swift; sourceTree = "<group>"; };
 		00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionProtocol.swift; sourceTree = "<group>"; };
 		00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		00D193222AC0B4DC0042E20B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				00D3D56F2ABE18370004774C /* FavouriteQuotesView.swift */,
 				00D193222AC0B4DC0042E20B /* SettingsView.swift */,
 				00D193262AC0B6E60042E20B /* VoiceRecognitionView.swift */,
+				008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */,
 				004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */,
 				00D3D56A2ABDF76C0004774C /* QuoteModel.swift */,
+				008FF50F2AC0D931005326B0 /* ChangeAppIconViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 			children = (
 				00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */,
 				00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */,
+				008FF50D2AC0D839005326B0 /* AppIcon.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -393,9 +402,11 @@
 			files = (
 				00F16F6B2ABBA6E40021D4DD /* QuotesSourcesView.swift in Sources */,
 				00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */,
+				008FF5122AC0D9E8005326B0 /* ChangeAppIconView.swift in Sources */,
 				00D3D5732ABE20730004774C /* QuotesData.xcdatamodeld in Sources */,
 				004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */,
 				00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */,
+				008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */,
 				00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */,
 				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
@@ -405,6 +416,7 @@
 				00D3D56B2ABDF76C0004774C /* QuoteModel.swift in Sources */,
 				00D3D57C2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift in Sources */,
 				00F16FAE2ABD07170021D4DD /* LinkPresenter.swift in Sources */,
+				008FF5102AC0D931005326B0 /* ChangeAppIconViewModel.swift in Sources */,
 				00F16FA02ABBBB5E0021D4DD /* KanyeQuoteModel.swift in Sources */,
 				00D193252AC0B5BB0042E20B /* SettingsModel.swift in Sources */,
 				00F16FAB2ABD017A0021D4DD /* QuotableQuoteModel.swift in Sources */,
@@ -459,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -519,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -572,6 +586,7 @@
 		00F16F8A2ABBA6E60021D4DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -601,6 +616,7 @@
 		00F16F8B2ABBA6E60021D4DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

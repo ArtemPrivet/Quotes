@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private let settingsArray = [SettingsModel(title: "Voice", id: 0, destination: .speechRecognition)]
-
     var body: some View {
         NavigationView {
-            List(settingsArray, id: \.id) { source in
-                NavigationLink {
-                    LinkPresenter { VoiceRecognitionView() }
-                } label: {
-                    Text(source.title)
-                }
+            List {
+                NavigationLink("Voice", destination: VoiceRecognitionView())
+                NavigationLink("App Icon", destination: ChangeAppIconView())
             }
             .navigationTitle("Settings")
         }
