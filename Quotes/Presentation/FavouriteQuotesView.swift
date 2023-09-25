@@ -20,8 +20,17 @@ struct FavouriteQuotesView: View {
                 QuotesEmptyView(bodyText: "You have no favourite quotes", tabSelection: $tabSelection)
                     .navigationTitle("Favourites")
             } else {
-                List(quotes) {
-                    Text($0.viewQuote)
+                List(quotes) { quote in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(quote.viewQuote)
+                        HStack {
+                            Text(quote.viewAuthor)
+                            Spacer()
+                            Text("27 of September")
+
+                        }
+                        .font(.caption)
+                    }
                 }
                 .navigationTitle("Favourites")
             }
