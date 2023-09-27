@@ -28,7 +28,6 @@ extension SpeechRecognition: SpeechRecognitionProtocol {
         let language = userDefaults.string(forKey: UserDefaultsHelper.Keys.recognitionVoice.rawValue)
         let voice = SpeechLanguage(rawValue: language ?? "") ?? .enUS
         utterance.voice = AVSpeechSynthesisVoice(language: voice.rawValue)
-
         synthesizer.speak(utterance)
     }
 }

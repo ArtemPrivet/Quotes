@@ -26,6 +26,7 @@
 		00D3D5752ABE45C00004774C /* QuotesStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D5742ABE45C00004774C /* QuotesStorageService.swift */; };
 		00D3D57C2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D57A2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift */; };
 		00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D57B2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift */; };
+		00E1CFCB2AC4DBF400C4C720 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 00E1CFCA2AC4DBF400C4C720 /* RswiftLibrary */; };
 		00F16F692ABBA6E40021D4DD /* QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F682ABBA6E40021D4DD /* QuotesApp.swift */; };
 		00F16F6B2ABBA6E40021D4DD /* QuotesSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F6A2ABBA6E40021D4DD /* QuotesSourcesView.swift */; };
 		00F16F6D2ABBA6E50021D4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E1CFCB2AC4DBF400C4C720 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006DA4CA2AC4E16200230813 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00F16F6E2ABBA6E50021D4DD /* Preview Content */,
+				0089A25C2AC1EAE500D6B12C /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		00D1931D2AC0B09A0042E20B /* SpeechRecognition */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +186,8 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */,
+				006DA4CA2AC4E16200230813 /* Resources */,
 				00D1931D2AC0B09A0042E20B /* SpeechRecognition */,
 				00D3D56C2ABE14E90004774C /* Storage */,
 				00F16FAC2ABD07100021D4DD /* Helpers */,
@@ -183,9 +196,6 @@
 				00F16F932ABBA7280021D4DD /* Presentation */,
 				00F16F922ABBA71D0021D4DD /* Networking */,
 				00F16F682ABBA6E40021D4DD /* QuotesApp.swift */,
-				00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */,
-				0089A25C2AC1EAE500D6B12C /* Colors.xcassets */,
-				00F16F6E2ABBA6E50021D4DD /* Preview Content */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -290,8 +300,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				00E1CFCD2AC4DC2400C4C720 /* PBXTargetDependency */,
 			);
 			name = Quotes;
+			packageProductDependencies = (
+				00E1CFCA2AC4DBF400C4C720 /* RswiftLibrary */,
+			);
 			productName = Quotes;
 			productReference = 00F16F652ABBA6E40021D4DD /* Quotes.app */;
 			productType = "com.apple.product-type.application";
@@ -364,6 +378,9 @@
 				Base,
 			);
 			mainGroup = 00F16F5C2ABBA6E40021D4DD;
+			packageReferences = (
+				00E1CFC92AC4DBF400C4C720 /* XCRemoteSwiftPackageReference "R" */,
+			);
 			productRefGroup = 00F16F662ABBA6E40021D4DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,6 +479,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		00E1CFCD2AC4DC2400C4C720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 00E1CFCC2AC4DC2400C4C720 /* RswiftGenerateInternalResources */;
+		};
 		00F16F772ABBA6E60021D4DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 00F16F642ABBA6E40021D4DD /* Quotes */;
@@ -599,7 +620,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H2WWUCQQY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -629,7 +650,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H2WWUCQQY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -767,6 +788,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00E1CFC92AC4DBF400C4C720 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 7.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00E1CFCA2AC4DBF400C4C720 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00E1CFC92AC4DBF400C4C720 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		00E1CFCC2AC4DC2400C4C720 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		00D3D5712ABE20730004774C /* QuotesData.xcdatamodeld */ = {

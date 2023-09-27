@@ -67,7 +67,6 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
                     quoteModel.quote = viewModel.quote
                     quoteModel.date = Date()
                     try? moc.save()
-//                    viewModel.saveQuote()
                 } label: {
                     HStack(spacing: 5) {
                         Text("Save")
@@ -83,7 +82,7 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
             }
         }
         .navigationTitle(viewModel.title)
-        .onAppear {
+        .task {
             if viewModel.shouldLoadQuote {
                 viewModel.reloadQuote()
             }

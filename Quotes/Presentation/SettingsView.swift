@@ -21,9 +21,9 @@ struct SettingsView: View {
                 }
                 Spacer()
                 Text("Version: 1.0.0")
-                    .foregroundColor(Color("textWhite").opacity(0.7))
+                    .foregroundColor(Color(R.color.textWhite.name).opacity(0.7))
             }
-            .background(Color("backgroundDefault"))
+            .background(Color(R.color.backgroundDefault.name))
             .navigationTitle("Settings")
         }
     }

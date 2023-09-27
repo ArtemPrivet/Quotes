@@ -33,9 +33,9 @@ enum AppIcon: String, CaseIterable, Identifiable {
     var preview: UIImage {
         switch self {
         case .primary:
-            return UIImage(named: "kanye") ?? UIImage()
+            return R.image.kanye()!
         case .quotable:
-            return UIImage(named: "quotable") ?? UIImage()
+            return R.image.quotable()!
         }
     }
 }
