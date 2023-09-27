@@ -26,7 +26,9 @@ struct FavouriteQuotesView: View {
                         HStack {
                             Text(quote.viewAuthor)
                             Spacer()
-                            Text("27 of September")
+                            if let date = quote.date {
+                                Text(DateHelper.dayMonthFormatter.string(from: date))
+                            }
 
                         }
                         .font(.caption)

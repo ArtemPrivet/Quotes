@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */; };
 		0089A25D2AC1EAE500D6B12C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0089A25C2AC1EAE500D6B12C /* Colors.xcassets */; };
+		0089A25F2AC327BB00D6B12C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089A25E2AC327BB00D6B12C /* DateHelper.swift */; };
 		008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF50D2AC0D839005326B0 /* AppIcon.swift */; };
 		008FF5102AC0D931005326B0 /* ChangeAppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF50F2AC0D931005326B0 /* ChangeAppIconViewModel.swift */; };
 		008FF5122AC0D9E8005326B0 /* ChangeAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuoteModel.swift; sourceTree = "<group>"; };
 		0089A25C2AC1EAE500D6B12C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0089A25E2AC327BB00D6B12C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		008FF50D2AC0D839005326B0 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		008FF50F2AC0D931005326B0 /* ChangeAppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewModel.swift; sourceTree = "<group>"; };
 		008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				00F16FAD2ABD07170021D4DD /* LinkPresenter.swift */,
 				00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */,
 				008FF50D2AC0D839005326B0 /* AppIcon.swift */,
+				0089A25E2AC327BB00D6B12C /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */,
 				00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */,
 				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
+				0089A25F2AC327BB00D6B12C /* DateHelper.swift in Sources */,
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
 				00F16FA92ABCABB00021D4DD /* QuoteSourceViewModel.swift in Sources */,
 				00D3D5702ABE18370004774C /* FavouriteQuotesView.swift in Sources */,

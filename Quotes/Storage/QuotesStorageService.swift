@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 final class QuotesStorageService: ObservableObject {
-    @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: QuoteDataModel.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \QuoteDataModel.date, ascending: true)])
     var quotes: FetchedResults<QuoteDataModel>
 
     let container: NSPersistentContainer = NSPersistentContainer(name: "QuotesData")
+    var context: NSManagedObjectContext { container.viewContext }
 
     static let shared = QuotesStorageService()
 
@@ -28,14 +28,14 @@ final class QuotesStorageService: ObservableObject {
     }
 
     func saveQuote(_ quote: QuoteModel) {
-        let dataModel = QuoteDataModel(context: moc)
+        let dataModel = QuoteDataModel(context: context)
         dataModel.quote = quote.quote
         dataModel.author = quote.author
         dataModel.image = quote.image
         dataModel.date = Date()
 
         do {
-            try moc.save()
+            try context.save()
         } catch {
             print("whoops \(error.localizedDescription)")
         }
@@ -43,8 +43,8 @@ final class QuotesStorageService: ObservableObject {
 
     func deleteQuote(_ quote: QuoteModel) {
         guard let quoteToDelete = quotes.first(where: { $0.quote == quote.quote }) else { return }
-        moc.delete(quoteToDelete)
-        try? moc.save()
+        context.delete(quoteToDelete)
+        try? context.save()
     }
 
     private func addMockData(moc: NSManagedObjectContext) {
