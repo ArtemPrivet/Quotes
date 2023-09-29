@@ -21,13 +21,15 @@ protocol QuoteLoaderViewModelProtocol: ObservableObject {
 }
 
 class QuoteLoaderViewModel {
-    private let loader: any QuoteLoaderProtocol
-    private var quoteModel: QuoteModel?
     @Published private(set) var title: String
     @Published var showLoading: Bool = false
+    // TODO: Show alert when try to save already saved quote
 
+    private let loader: any QuoteLoaderProtocol
+    private var quoteModel: QuoteModel?
     private var cancellables: Set<AnyCancellable> = []
     private let speechRecognition: SpeechRecognitionProtocol
+    private let storage = QuotesStorageService.shared
 
     init(
         source: QuoteSourceModel,
@@ -73,8 +75,27 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
     }
 
     func saveQuote() {
-//        guard let quote = quoteModel else { return }
-//        QuotesStorageService.shared.saveQuote(quote)
+        guard let quote = quoteModel else { return }
+        guard storage.checkIfAlreadyExist(quote: quote.quote) == false else { return }
+        storage
+            .publisher { [weak self] in
+                guard let self = self else { return }
+                let quoteModel = QuoteDataModel(context: QuotesStorageService.shared.context)
+                quoteModel.author = self.author
+                quoteModel.quote = self.quote
+                quoteModel.date = Date()
+            }
+            .sink { completion in
+                if case .failure(let error) = completion {
+                    print("CORE DATA ERROR ❌")
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { success in
+                if success {
+                    print("CORE DATA SAVED ✅")
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func reloadQuote() {

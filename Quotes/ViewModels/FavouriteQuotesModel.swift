@@ -5,13 +5,16 @@
 //  Created by Artem Orlov on 22.09.23.
 //
 
-import Foundation
+import CoreData
+import Combine
 
 class FavouriteQuotesModel: ObservableObject {
-    @Published var quotes: [QuoteModel] = []
+    @Published var quotes: [QuoteDataModel] = []
 
-    init() {
-//        quotes = QuotesStorageService.shared.quotes
-//            .map { QuoteModel(quote: $0.quote ?? "", author: $0.author ?? "", image: $0.image ?? "") }
+    private var cancellables: Set<AnyCancellable> = []
+    private let storage =  QuotesStorageService.shared
+
+    func delete(model: QuoteDataModel) {
+        storage.context.delete(model)
     }
 }

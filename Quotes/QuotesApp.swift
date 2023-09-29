@@ -12,7 +12,7 @@ struct QuotesApp: App {
     var body: some Scene {
         WindowGroup {
             QuotesTabView()
-                .environment(\.managedObjectContext, QuotesStorageService.shared.container.viewContext)
+                .environment(\.managedObjectContext, QuotesStorageService.shared.context)
         }
     }
 }

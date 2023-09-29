@@ -5,59 +5,56 @@
 //  Created by Artem Orlov on 22.09.23.
 //
 
-import SwiftUI
 import CoreData
+import Combine
 
-final class QuotesStorageService: ObservableObject {
-    @FetchRequest(entity: QuoteDataModel.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \QuoteDataModel.date, ascending: true)])
-    var quotes: FetchedResults<QuoteDataModel>
+protocol QuotesStorageServiceProtocol {
+    var context: NSManagedObjectContext { get }
+    func publisher(save action: @escaping Action) -> CoreDataSaveModelPublisher
+    func publisher<T: NSManagedObject>(fetch request: NSFetchRequest<T>) -> CoreDataFetchResultsPublisher<T>
+    func publisher(delete request: NSFetchRequest<NSFetchRequestResult>) -> CoreDataDeleteModelPublisher
 
-    let container: NSPersistentContainer = NSPersistentContainer(name: "QuotesData")
-    var context: NSManagedObjectContext { container.viewContext }
+    func checkIfAlreadyExist(quote: String) -> Bool
+}
 
-    static let shared = QuotesStorageService()
+final class QuotesStorageService: QuotesStorageServiceProtocol {
+    private let container: NSPersistentContainer
 
-    private init(forPreview: Bool = false) {
-        if forPreview {
-            container.persistentStoreDescriptions.first!.url = URL(filePath: "/dev/null")
-        }
-        container.loadPersistentStores { _, _ in }
-        if forPreview {
-            addMockData(moc: container.viewContext)
-        }
+    static var shared: QuotesStorageServiceProtocol = {
+        return QuotesStorageService(name: "QuotesData")
+    }()
+
+    var context: NSManagedObjectContext {
+        container.viewContext
     }
 
-    func saveQuote(_ quote: QuoteModel) {
-        let dataModel = QuoteDataModel(context: context)
-        dataModel.quote = quote.quote
-        dataModel.author = quote.author
-        dataModel.image = quote.image
-        dataModel.date = Date()
-
-        do {
-            try context.save()
-        } catch {
-            print("whoops \(error.localizedDescription)")
-        }
+    init(name: String) {
+        self.container = NSPersistentContainer(name: name)
+        self.container.loadPersistentStores { _, _ in }
     }
 
-    func deleteQuote(_ quote: QuoteModel) {
-        guard let quoteToDelete = quotes.first(where: { $0.quote == quote.quote }) else { return }
-        context.delete(quoteToDelete)
-        try? context.save()
+    func publisher(save action: @escaping Action) -> CoreDataSaveModelPublisher {
+        return CoreDataSaveModelPublisher(action: action, context: context)
     }
 
-    private func addMockData(moc: NSManagedObjectContext) {
-        let quote1 = QuoteDataModel(context: moc)
-        quote1.quote = "This is the first quote"
-        quote1.author = "Artem"
+    func publisher<T>(fetch request: NSFetchRequest<T>) -> CoreDataFetchResultsPublisher<T> where T : NSManagedObject {
+        return CoreDataFetchResultsPublisher(request: request, context: context)
+    }
 
-        let quote2 = QuoteDataModel(context: moc)
-        quote2.quote = "This is the second quote"
-        quote2.author = "Artem"
+    func publisher(delete request: NSFetchRequest<NSFetchRequestResult>) -> CoreDataDeleteModelPublisher {
+        return CoreDataDeleteModelPublisher(delete: request, context: context)
+    }
 
-        let quote3 = QuoteDataModel(context: moc)
-        quote3.quote = "This is the third big quote This is the third big quote This is the third big quote This is the third big quote"
-        quote3.author = "Artem"
+    func checkIfAlreadyExist(quote: String) -> Bool {
+        let fetchRequest: NSFetchRequest<QuoteDataModel>
+        fetchRequest = QuoteDataModel.fetchRequest()
+
+        fetchRequest.predicate = NSPredicate(
+            format: "quote LIKE %@", quote
+        )
+
+        let objects = try? context.fetch(fetchRequest)
+
+        return !(objects?.isEmpty ?? true)
     }
 }
