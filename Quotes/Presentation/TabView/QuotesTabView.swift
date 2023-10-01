@@ -14,17 +14,17 @@ struct QuotesTabView: View {
         TabView(selection: $tabSelection) {
             QuotesSourcesView()
                 .tabItem {
-                    Label("Quotes", systemImage: "quote.bubble")
+                    Label(R.string.localizable.quotes(), systemImage: "quote.bubble")
                 }
                 .tag(0)
             FavouriteQuotesView(tabSelection: $tabSelection)
                 .tabItem {
-                    Label("Favourite", systemImage: "heart.square")
+                    Label(R.string.localizable.favorites(), systemImage: "heart.square")
                 }
                 .tag(1)
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label(R.string.localizable.settings(), systemImage: "gear")
                 }
                 .tag(2)
         }

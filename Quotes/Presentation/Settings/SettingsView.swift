@@ -33,7 +33,7 @@ struct SettingsView: View {
                     .foregroundColor(Color(R.color.textWhite.name).opacity(0.7))
             }
             .background(Color(R.color.backgroundDefault.name))
-            .navigationTitle("Settings")
+            .navigationTitle(R.string.localizable.settings())
         }
     }
 }

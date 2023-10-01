@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Quotes
+
+  Created by Artem Orlov on 30.09.23.
+  
+*/
+
+// Quotes main
+
+"quotes" = "Quotes";
+
+// Favourites
+
+"favorites" = "Favorites";
+"favorites_add_quotes" = "Add quotes";
+"favorites_no_quotes_title" = "You have no favourite quotes";
+
+// Settings
+
+"settings" = "Settings";

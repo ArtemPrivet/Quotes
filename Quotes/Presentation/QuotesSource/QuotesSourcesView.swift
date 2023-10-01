@@ -21,7 +21,7 @@ struct QuotesSourcesView: View {
                 }
 
             }
-            .navigationTitle("Quotes")
+            .navigationTitle(R.string.localizable.quotes())
             .onAppear {
                 viewModel.getSources()
             }
