@@ -19,3 +19,9 @@
 // Settings
 
 "settings" = "Settings";
+"language" = "Language";
+"settings_voice" = "Voice recognition";
+"settings_app_icon" = "App Icon";
+"settings_header" = "Basic";
+"settings_voice_cell" = "Voice";
+"settings_version" = "Version: %@";

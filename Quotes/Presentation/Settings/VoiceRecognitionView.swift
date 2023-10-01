@@ -12,13 +12,13 @@ struct VoiceRecognitionView: View {
 
     var body: some View {
         Form {
-            Picker("Language", selection: $voice) {
+            Picker(R.string.localizable.language(), selection: $voice) {
                 ForEach(SpeechLanguage.allCases, id: \.rawValue) {
                     Text($0.rawValue)
                 }
             }
         }
-        .navigationTitle("Voice recognition")
+        .navigationTitle(R.string.localizable.settings_voice())
     }
 }
 

@@ -16,20 +16,20 @@ struct SettingsView: View {
                         NavigationLink {
                             LinkPresenter { VoiceRecognitionView() }
                         } label: {
-                            SettingsCellView(title: "Voice", imageName: "speaker.wave.2.circle.fill")
+                            SettingsCellView(title: R.string.localizable.settings_voice_cell(), imageName: "speaker.wave.2.circle.fill")
                         }
 
                         NavigationLink {
                             LinkPresenter { ChangeAppIconView() }
                         } label: {
-                            SettingsCellView(title: "App Icon", imageName: "app")
+                            SettingsCellView(title: R.string.localizable.settings_app_icon(), imageName: "app")
                         }
                     } header: {
-                        Text("Basic")
+                        Text(R.string.localizable.settings_header())
                     }
                 }
                 Spacer()
-                Text("Version: 1.0.0")
+                Text(R.string.localizable.settings_version("1.0.0"))
                     .foregroundColor(Color(R.color.textWhite.name).opacity(0.7))
             }
             .background(Color(R.color.backgroundDefault.name))

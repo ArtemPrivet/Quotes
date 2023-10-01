@@ -19,3 +19,9 @@
 // Settings
 
 "settings" = "Настройки";
+"language" = "Язые";
+"settings_voice" = "Настройки голоса";
+"settings_app_icon" = "Иконка приложения";
+"settings_header" = "Стандартные";
+"settings_voice_cell" = "Голос";
+"settings_version" = "Версия: %@";

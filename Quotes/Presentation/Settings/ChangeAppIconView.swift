@@ -41,7 +41,7 @@ struct ChangeAppIconView: View {
                     .padding(.vertical, 40)
             }
         }
-        .navigationTitle("App Icon")
+        .navigationTitle(R.string.localizable.settings_app_icon())
     }
 }
 
@@ -54,13 +54,13 @@ struct ChangeAppIconView_Previews: PreviewProvider {
 struct CheckboxView: View {
     let isSelected: Bool
 
-    private var image: UIImage {
+    private var image: Image {
         let imageName = isSelected ? "checkmark.square" : "square"
-        return UIImage(systemName: imageName)!
+        return Image(systemName: imageName)
     }
 
     var body: some View {
-        Image(uiImage: image)
+        image
             .resizable()
             .frame(width: 20, height: 20)
     }
