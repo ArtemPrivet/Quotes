@@ -13,8 +13,17 @@ struct SettingsView: View {
             VStack {
                 Form {
                     Section {
-                        NavigationLink("Voice", destination: VoiceRecognitionView())
-                        NavigationLink("App Icon", destination: ChangeAppIconView())
+                        NavigationLink {
+                            LinkPresenter { VoiceRecognitionView() }
+                        } label: {
+                            SettingsCellView(title: "Voice", imageName: "speaker.wave.2.circle.fill")
+                        }
+
+                        NavigationLink {
+                            LinkPresenter { ChangeAppIconView() }
+                        } label: {
+                            SettingsCellView(title: "App Icon", imageName: "app")
+                        }
                     } header: {
                         Text("Basic")
                     }

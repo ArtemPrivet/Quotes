@@ -18,9 +18,8 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Spacer()
-
             if viewModel.showLoading  {
+                Spacer()
                 ProgressView()
             } else {
                 VStack {
@@ -76,6 +75,11 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
                 .padding(.bottom, 8)
 
             }
+        }
+        .alert("Alert!", isPresented: $viewModel.shouldShowAlert, presenting: viewModel.errorMessage) { errorMessage in
+
+        } message: { message in
+            Text(message)
         }
         .navigationTitle(viewModel.title)
         .task {

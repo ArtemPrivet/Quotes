@@ -16,6 +16,7 @@
 		00C08C7D2AC76C2A00BDCB42 /* CoreDataSaveModelPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08C7C2AC76C2A00BDCB42 /* CoreDataSaveModelPublisher.swift */; };
 		00C08C802AC7724100BDCB42 /* CoreDataFetchModelPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08C7F2AC7724100BDCB42 /* CoreDataFetchModelPublisher.swift */; };
 		00C08C832AC7736D00BDCB42 /* CoreDataDeleteModelPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08C822AC7736D00BDCB42 /* CoreDataDeleteModelPublisher.swift */; };
+		00C08C862AC84C2600BDCB42 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08C852AC84C2600BDCB42 /* SettingsCellView.swift */; };
 		00D1931F2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */; };
 		00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */; };
 		00D193232AC0B4DC0042E20B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193222AC0B4DC0042E20B /* SettingsView.swift */; };
@@ -78,6 +79,7 @@
 		00C08C7C2AC76C2A00BDCB42 /* CoreDataSaveModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSaveModelPublisher.swift; sourceTree = "<group>"; };
 		00C08C7F2AC7724100BDCB42 /* CoreDataFetchModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetchModelPublisher.swift; sourceTree = "<group>"; };
 		00C08C822AC7736D00BDCB42 /* CoreDataDeleteModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDeleteModelPublisher.swift; sourceTree = "<group>"; };
+		00C08C852AC84C2600BDCB42 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionProtocol.swift; sourceTree = "<group>"; };
 		00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		00D193222AC0B4DC0042E20B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				00D3D56D2ABE153E0004774C /* QuotesEmptyView.swift */,
 				00D3D56F2ABE18370004774C /* FavouriteQuotesView.swift */,
 				00D193222AC0B4DC0042E20B /* SettingsView.swift */,
+				00C08C852AC84C2600BDCB42 /* SettingsCellView.swift */,
 				00D193262AC0B6E60042E20B /* VoiceRecognitionView.swift */,
 				008FF5112AC0D9E8005326B0 /* ChangeAppIconView.swift */,
 			);
@@ -438,6 +441,7 @@
 				00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */,
 				008FF5122AC0D9E8005326B0 /* ChangeAppIconView.swift in Sources */,
 				00D3D5732ABE20730004774C /* QuotesData.xcdatamodeld in Sources */,
+				00C08C862AC84C2600BDCB42 /* SettingsCellView.swift in Sources */,
 				004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */,
 				00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */,
 				008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */,

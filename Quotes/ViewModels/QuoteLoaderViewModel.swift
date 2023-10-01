@@ -11,9 +11,12 @@ import Combine
 protocol QuoteLoaderViewModelProtocol: ObservableObject {
     var quote: String { get }
     var title: String { get }
-    var shouldLoadQuote: Bool { get }
-    var showLoading: Bool { get }
     var author: String { get }
+
+    var shouldLoadQuote: Bool { get }
+    var shouldShowAlert: Bool { get set }
+    var showLoading: Bool { get }
+    var errorMessage: String? { get }
 
     func saveQuote()
     func reloadQuote()
@@ -24,6 +27,8 @@ class QuoteLoaderViewModel {
     @Published private(set) var title: String
     @Published var showLoading: Bool = false
     // TODO: Show alert when try to save already saved quote
+    @Published var shouldShowAlert: Bool = false
+    var errorMessage: String?
 
     private let loader: any QuoteLoaderProtocol
     private var quoteModel: QuoteModel?
@@ -76,7 +81,11 @@ extension QuoteLoaderViewModel: QuoteLoaderViewModelProtocol {
 
     func saveQuote() {
         guard let quote = quoteModel else { return }
-        guard storage.checkIfAlreadyExist(quote: quote.quote) == false else { return }
+        guard storage.checkIfAlreadyExist(quote: quote.quote) == false else {
+            errorMessage = "This quote is saved already"
+            shouldShowAlert = true
+            return
+        }
         storage
             .publisher { [weak self] in
                 guard let self = self else { return }
