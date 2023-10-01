@@ -31,4 +31,8 @@ extension QuoteDataModel : Identifiable {
     var viewAuthor: String {
         author ?? "Unknown"
     }
+
+    var viewDate: String {
+        DateHelper.dayMonthFormatter.string(from: date ?? Date())
+    }
 }

@@ -22,17 +22,7 @@ struct FavouriteQuotesView: View {
             } else {
                 List {
                     ForEach(quotes) { quote in
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(quote.viewQuote)
-                            HStack {
-                                Text(quote.viewAuthor)
-                                Spacer()
-                                if let date = quote.date {
-                                    Text(DateHelper.dayMonthFormatter.string(from: date))
-                                }
-                            }
-                        }
-                        .font(.caption)
+                        FavouriteQuoteCell(quote: quote.viewQuote, author: quote.viewAuthor, date: quote.viewDate)
                     }
                     .onDelete { indexSet in
                         for index in indexSet {
