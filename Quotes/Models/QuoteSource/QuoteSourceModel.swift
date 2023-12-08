@@ -18,4 +18,5 @@ enum QuoteSourceType {
     case kanye(String)
     case quotable(String)
     case breakingBad(String)
+    case local(String)
 }

@@ -12,21 +12,26 @@ struct QuotesTabView: View {
 
     var body: some View {
         TabView(selection: $tabSelection) {
+            QuoteOfTheDayView()
+                .tabItem {
+                    Label(R.string.localizable.quote_of_the_day(), systemImage: "quote.bubble")
+                }
+                .tag(0)
             QuotesSourcesView()
                 .tabItem {
                     Label(R.string.localizable.quotes(), systemImage: "quote.bubble")
                 }
-                .tag(0)
+                .tag(1)
             FavouriteQuotesView(tabSelection: $tabSelection)
                 .tabItem {
-                    Label(R.string.localizable.favorites(), systemImage: "heart.square")
+                    Label(R.string.localizable.favourites(), systemImage: "heart.square")
                 }
-                .tag(1)
+                .tag(2)
             SettingsView()
                 .tabItem {
                     Label(R.string.localizable.settings(), systemImage: "gear")
                 }
-                .tag(2)
+                .tag(3)
         }
     }
 }

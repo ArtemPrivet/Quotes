@@ -9,12 +9,17 @@
 // Quotes main
 
 "quotes" = "Цитаты";
+"random" = "Случайные";
+
+// Quote of the day
+
+"quote_of_the_day" = "Цитата дня";
 
 // Favourites
 
-"favorites" = "Сохраненные";
-"favorites_add_quotes" = "Добавить цитаты";
-"favorites_no_quotes_title" = "Нет сохраненных цитат";
+"favourites" = "Сохраненные";
+"favourites_add_quotes" = "Добавить цитаты";
+"favourites_no_quotes_title" = "Нет сохраненных цитат";
 
 // Settings
 

@@ -17,10 +17,10 @@ struct FavouriteQuotesView: View {
     var body: some View {
         NavigationView {
             if quotes.isEmpty {
-                QuotesEmptyView(bodyText: R.string.localizable.favorites_no_quotes_title(),
-                                buttonText: R.string.localizable.favorites_add_quotes(),
+                QuotesEmptyView(bodyText: R.string.localizable.favourites_no_quotes_title(),
+                                buttonText: R.string.localizable.favourites_add_quotes(),
                                 tabSelection: $tabSelection)
-                    .navigationTitle(R.string.localizable.favorites())
+                    .navigationTitle(R.string.localizable.favourites())
             } else {
                 List {
                     ForEach(quotes) { quote in
@@ -32,7 +32,7 @@ struct FavouriteQuotesView: View {
                         }
                     }
                 }
-                .navigationTitle(R.string.localizable.favorites())
+                .navigationTitle(R.string.localizable.favourites())
             }
         }
     }

@@ -28,6 +28,8 @@ struct QuoteModel {
         case let model as [BreakingBadQuoteModel]:
             guard let breakingBad = model.first else { return nil }
             self = Self.init(quote: breakingBad.quote, author: breakingBad.author)
+        case let model as LocalQuoteModel:
+            self = Self.init(quote: model.text, author: model.author, image: model.image)
         default:
             return nil
         }

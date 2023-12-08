@@ -10,6 +10,14 @@
 		00296E222AC90DBF00011D1B /* FavouriteQuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00296E212AC90DBF00011D1B /* FavouriteQuoteCell.swift */; };
 		00296E282AC913DD00011D1B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00296E2A2AC913DD00011D1B /* Localizable.strings */; };
 		004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */; };
+		0052DC9D2B23484D00892F3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052DC9C2B23484D00892F3A /* Fonts.swift */; };
+		0052F1FB2B234AC500DF7604 /* Whisper-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00C80A092B2345930096DD40 /* Whisper-Regular.ttf */; };
+		0079F1852ACCBA9000919FAC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0079F1842ACCBA9000919FAC /* WidgetKit.framework */; };
+		0079F1872ACCBA9000919FAC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0079F1862ACCBA9000919FAC /* SwiftUI.framework */; };
+		0079F18A2ACCBA9000919FAC /* QuotesWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079F1892ACCBA9000919FAC /* QuotesWidgetBundle.swift */; };
+		0079F18C2ACCBA9000919FAC /* QuotesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079F18B2ACCBA9000919FAC /* QuotesWidget.swift */; };
+		0079F18E2ACCBA9100919FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0079F18D2ACCBA9100919FAC /* Assets.xcassets */; };
+		0079F1922ACCBA9100919FAC /* QuotesWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0079F1822ACCBA9000919FAC /* QuotesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0089A25D2AC1EAE500D6B12C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0089A25C2AC1EAE500D6B12C /* Colors.xcassets */; };
 		0089A25F2AC327BB00D6B12C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089A25E2AC327BB00D6B12C /* DateHelper.swift */; };
 		008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FF50D2AC0D839005326B0 /* AppIcon.swift */; };
@@ -31,6 +39,9 @@
 		00D3D5752ABE45C00004774C /* QuotesStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D5742ABE45C00004774C /* QuotesStorageService.swift */; };
 		00D3D57C2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D57A2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift */; };
 		00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3D57B2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift */; };
+		00D7250A2B222621000FB88B /* QuoteOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D725092B222621000FB88B /* QuoteOfTheDayView.swift */; };
+		00D7250C2B222773000FB88B /* LocalQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7250B2B222773000FB88B /* LocalQuoteModel.swift */; };
+		00D725102B222945000FB88B /* QuoteOfTheDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D7250F2B222945000FB88B /* QuoteOfTheDayViewModel.swift */; };
 		00E1CFCB2AC4DBF400C4C720 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 00E1CFCA2AC4DBF400C4C720 /* RswiftLibrary */; };
 		00F16F692ABBA6E40021D4DD /* QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F682ABBA6E40021D4DD /* QuotesApp.swift */; };
 		00F16F6B2ABBA6E40021D4DD /* QuotesSourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F16F6A2ABBA6E40021D4DD /* QuotesSourcesView.swift */; };
@@ -54,6 +65,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0079F1902ACCBA9100919FAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00F16F5D2ABBA6E40021D4DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0079F1812ACCBA9000919FAC;
+			remoteInfo = QuotesWidgetExtension;
+		};
 		00F16F762ABBA6E60021D4DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00F16F5D2ABBA6E40021D4DD /* Project object */;
@@ -70,11 +88,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0079F1932ACCBA9100919FAC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0079F1922ACCBA9100919FAC /* QuotesWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		00296E212AC90DBF00011D1B /* FavouriteQuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteQuoteCell.swift; sourceTree = "<group>"; };
 		00296E292AC913DD00011D1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00296E2B2AC913E000011D1B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadQuoteModel.swift; sourceTree = "<group>"; };
+		0052DC9C2B23484D00892F3A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0079F1822ACCBA9000919FAC /* QuotesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuotesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0079F1842ACCBA9000919FAC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0079F1862ACCBA9000919FAC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0079F1892ACCBA9000919FAC /* QuotesWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesWidgetBundle.swift; sourceTree = "<group>"; };
+		0079F18B2ACCBA9000919FAC /* QuotesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesWidget.swift; sourceTree = "<group>"; };
+		0079F18D2ACCBA9100919FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0079F18F2ACCBA9100919FAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0079F1982ACCBDB900919FAC /* Quotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quotes.entitlements; sourceTree = "<group>"; };
 		0089A25C2AC1EAE500D6B12C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0089A25E2AC327BB00D6B12C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		008FF50D2AC0D839005326B0 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
@@ -84,6 +125,8 @@
 		00C08C7F2AC7724100BDCB42 /* CoreDataFetchModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetchModelPublisher.swift; sourceTree = "<group>"; };
 		00C08C822AC7736D00BDCB42 /* CoreDataDeleteModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDeleteModelPublisher.swift; sourceTree = "<group>"; };
 		00C08C852AC84C2600BDCB42 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
+		00C80A092B2345930096DD40 /* Whisper-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Whisper-Regular.ttf"; sourceTree = "<group>"; };
+		00C80A0A2B2346770096DD40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00D1931E2AC0B0B50042E20B /* SpeechRecognitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionProtocol.swift; sourceTree = "<group>"; };
 		00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		00D193222AC0B4DC0042E20B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -96,6 +139,9 @@
 		00D3D5742ABE45C00004774C /* QuotesStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStorageService.swift; sourceTree = "<group>"; };
 		00D3D57A2ABE490F0004774C /* QuoteDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		00D3D57B2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		00D725092B222621000FB88B /* QuoteOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayView.swift; sourceTree = "<group>"; };
+		00D7250B2B222773000FB88B /* LocalQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuoteModel.swift; sourceTree = "<group>"; };
+		00D7250F2B222945000FB88B /* QuoteOfTheDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayViewModel.swift; sourceTree = "<group>"; };
 		00F16F652ABBA6E40021D4DD /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F16F682ABBA6E40021D4DD /* QuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesApp.swift; sourceTree = "<group>"; };
 		00F16F6A2ABBA6E40021D4DD /* QuotesSourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesSourcesView.swift; sourceTree = "<group>"; };
@@ -121,6 +167,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0079F17F2ACCBA9000919FAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0079F1872ACCBA9000919FAC /* SwiftUI.framework in Frameworks */,
+				0079F1852ACCBA9000919FAC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00F16F622ABBA6E40021D4DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +269,7 @@
 				00F16FAA2ABD017A0021D4DD /* QuotableQuoteModel.swift */,
 				004BCBA42ABD17A100ED1A52 /* BreakingBadQuoteModel.swift */,
 				00D3D56A2ABDF76C0004774C /* QuoteModel.swift */,
+				00D7250B2B222773000FB88B /* LocalQuoteModel.swift */,
 			);
 			path = QuoteModels;
 			sourceTree = "<group>";
@@ -261,12 +317,41 @@
 		006DA4CA2AC4E16200230813 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00C80A072B2345810096DD40 /* Fonts */,
 				00296E242AC9139100011D1B /* Localization */,
 				00F16F6C2ABBA6E50021D4DD /* Assets.xcassets */,
 				00F16F6E2ABBA6E50021D4DD /* Preview Content */,
 				0089A25C2AC1EAE500D6B12C /* Colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0079F1832ACCBA9000919FAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0079F1842ACCBA9000919FAC /* WidgetKit.framework */,
+				0079F1862ACCBA9000919FAC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0079F1882ACCBA9000919FAC /* QuotesWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0079F1892ACCBA9000919FAC /* QuotesWidgetBundle.swift */,
+				0079F18B2ACCBA9000919FAC /* QuotesWidget.swift */,
+				0079F18D2ACCBA9100919FAC /* Assets.xcassets */,
+				0079F18F2ACCBA9100919FAC /* Info.plist */,
+			);
+			path = QuotesWidget;
+			sourceTree = "<group>";
+		};
+		00C80A072B2345810096DD40 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				00C80A092B2345930096DD40 /* Whisper-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		00D1931D2AC0B09A0042E20B /* SpeechRecognition */ = {
@@ -291,12 +376,30 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		00D725072B222605000FB88B /* QuoteOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				00D725092B222621000FB88B /* QuoteOfTheDayView.swift */,
+			);
+			path = QuoteOfTheDay;
+			sourceTree = "<group>";
+		};
+		00D7250E2B222932000FB88B /* QuoteOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				00D7250F2B222945000FB88B /* QuoteOfTheDayViewModel.swift */,
+			);
+			path = QuoteOfTheDay;
+			sourceTree = "<group>";
+		};
 		00F16F5C2ABBA6E40021D4DD = {
 			isa = PBXGroup;
 			children = (
 				00F16F672ABBA6E40021D4DD /* Quotes */,
 				00F16F782ABBA6E60021D4DD /* QuotesTests */,
 				00F16F822ABBA6E60021D4DD /* QuotesUITests */,
+				0079F1882ACCBA9000919FAC /* QuotesWidget */,
+				0079F1832ACCBA9000919FAC /* Frameworks */,
 				00F16F662ABBA6E40021D4DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -307,6 +410,7 @@
 				00F16F652ABBA6E40021D4DD /* Quotes.app */,
 				00F16F752ABBA6E60021D4DD /* QuotesTests.xctest */,
 				00F16F7F2ABBA6E60021D4DD /* QuotesUITests.xctest */,
+				0079F1822ACCBA9000919FAC /* QuotesWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,6 +418,8 @@
 		00F16F672ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				00C80A0A2B2346770096DD40 /* Info.plist */,
+				0079F1982ACCBDB900919FAC /* Quotes.entitlements */,
 				00F16F682ABBA6E40021D4DD /* QuotesApp.swift */,
 				006DA4CA2AC4E16200230813 /* Resources */,
 				00D1931D2AC0B09A0042E20B /* SpeechRecognition */,
@@ -365,6 +471,7 @@
 		00F16F932ABBA7280021D4DD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				00D725072B222605000FB88B /* QuoteOfTheDay */,
 				00296E152AC90CB500011D1B /* Settings */,
 				00296E142AC90CA800011D1B /* QuotesLoader */,
 				00296E132AC90C9B00011D1B /* TabView */,
@@ -387,6 +494,7 @@
 		00F16FA52ABC6E250021D4DD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				00D7250E2B222932000FB88B /* QuoteOfTheDay */,
 				00296E1B2AC90D2B00011D1B /* AppIcon */,
 				00296E1C2AC90D3400011D1B /* QuoteLoader */,
 				00296E1D2AC90D3A00011D1B /* QuoteSource */,
@@ -402,6 +510,7 @@
 				00D193202AC0B3810042E20B /* UserDefaultsHelper.swift */,
 				008FF50D2AC0D839005326B0 /* AppIcon.swift */,
 				0089A25E2AC327BB00D6B12C /* DateHelper.swift */,
+				0052DC9C2B23484D00892F3A /* Fonts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -409,6 +518,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0079F1812ACCBA9000919FAC /* QuotesWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0079F1962ACCBA9100919FAC /* Build configuration list for PBXNativeTarget "QuotesWidgetExtension" */;
+			buildPhases = (
+				0079F17E2ACCBA9000919FAC /* Sources */,
+				0079F17F2ACCBA9000919FAC /* Frameworks */,
+				0079F1802ACCBA9000919FAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuotesWidgetExtension;
+			productName = QuotesWidgetExtension;
+			productReference = 0079F1822ACCBA9000919FAC /* QuotesWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		00F16F642ABBA6E40021D4DD /* Quotes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00F16F892ABBA6E60021D4DD /* Build configuration list for PBXNativeTarget "Quotes" */;
@@ -416,11 +542,13 @@
 				00F16F612ABBA6E40021D4DD /* Sources */,
 				00F16F622ABBA6E40021D4DD /* Frameworks */,
 				00F16F632ABBA6E40021D4DD /* Resources */,
+				0079F1932ACCBA9100919FAC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E1CFCD2AC4DC2400C4C720 /* PBXTargetDependency */,
+				0079F1912ACCBA9100919FAC /* PBXTargetDependency */,
 			);
 			name = Quotes;
 			packageProductDependencies = (
@@ -476,6 +604,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					0079F1812ACCBA9000919FAC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					00F16F642ABBA6E40021D4DD = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -509,17 +640,27 @@
 				00F16F642ABBA6E40021D4DD /* Quotes */,
 				00F16F742ABBA6E60021D4DD /* QuotesTests */,
 				00F16F7E2ABBA6E60021D4DD /* QuotesUITests */,
+				0079F1812ACCBA9000919FAC /* QuotesWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0079F1802ACCBA9000919FAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0079F18E2ACCBA9100919FAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00F16F632ABBA6E40021D4DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0089A25D2AC1EAE500D6B12C /* Colors.xcassets in Resources */,
 				00296E282AC913DD00011D1B /* Localizable.strings in Resources */,
+				0052F1FB2B234AC500DF7604 /* Whisper-Regular.ttf in Resources */,
 				00F16F702ABBA6E50021D4DD /* Preview Assets.xcassets in Resources */,
 				00F16F6D2ABBA6E50021D4DD /* Assets.xcassets in Resources */,
 			);
@@ -542,6 +683,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0079F17E2ACCBA9000919FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0079F18C2ACCBA9000919FAC /* QuotesWidget.swift in Sources */,
+				0079F18A2ACCBA9000919FAC /* QuotesWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00F16F612ABBA6E40021D4DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,15 +700,19 @@
 				00C08C7D2AC76C2A00BDCB42 /* CoreDataSaveModelPublisher.swift in Sources */,
 				00F16FA72ABCA8C90021D4DD /* Networking.swift in Sources */,
 				008FF5122AC0D9E8005326B0 /* ChangeAppIconView.swift in Sources */,
+				00D725102B222945000FB88B /* QuoteOfTheDayViewModel.swift in Sources */,
 				00D3D5732ABE20730004774C /* QuotesData.xcdatamodeld in Sources */,
 				00C08C862AC84C2600BDCB42 /* SettingsCellView.swift in Sources */,
 				004BCBA52ABD17A100ED1A52 /* BreakingBadQuoteModel.swift in Sources */,
 				00D3D57D2ABE490F0004774C /* QuoteDataModel+CoreDataProperties.swift in Sources */,
 				008FF50E2AC0D839005326B0 /* AppIcon.swift in Sources */,
+				00D7250A2B222621000FB88B /* QuoteOfTheDayView.swift in Sources */,
 				00D193212AC0B3810042E20B /* UserDefaultsHelper.swift in Sources */,
 				00F16FA22ABBBBD30021D4DD /* QuoteLoaderView.swift in Sources */,
+				00D7250C2B222773000FB88B /* LocalQuoteModel.swift in Sources */,
 				0089A25F2AC327BB00D6B12C /* DateHelper.swift in Sources */,
 				00F16FA42ABC6E200021D4DD /* QuoteLoaderViewModel.swift in Sources */,
+				0052DC9D2B23484D00892F3A /* Fonts.swift in Sources */,
 				00C08C802AC7724100BDCB42 /* CoreDataFetchModelPublisher.swift in Sources */,
 				00296E222AC90DBF00011D1B /* FavouriteQuoteCell.swift in Sources */,
 				00C08C832AC7736D00BDCB42 /* CoreDataDeleteModelPublisher.swift in Sources */,
@@ -605,6 +759,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0079F1912ACCBA9100919FAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0079F1812ACCBA9000919FAC /* QuotesWidgetExtension */;
+			targetProxy = 0079F1902ACCBA9100919FAC /* PBXContainerItemProxy */;
+		};
 		00E1CFCD2AC4DC2400C4C720 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 00E1CFCC2AC4DC2400C4C720 /* RswiftGenerateInternalResources */;
@@ -634,6 +793,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0079F1942ACCBA9100919FAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H2WWUCQQY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuotesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuotesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "artem-orlov.Quotes.QuotesWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0079F1952ACCBA9100919FAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4H2WWUCQQY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuotesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuotesWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "artem-orlov.Quotes.QuotesWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		00F16F872ABBA6E60021D4DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -753,15 +966,18 @@
 		00F16F8A2ABBA6E60021D4DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quotes/Quotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H2WWUCQQY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -783,15 +999,18 @@
 		00F16F8B2ABBA6E60021D4DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Quotable";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quotes/Quotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotes/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4H2WWUCQQY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -889,6 +1108,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0079F1962ACCBA9100919FAC /* Build configuration list for PBXNativeTarget "QuotesWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0079F1942ACCBA9100919FAC /* Debug */,
+				0079F1952ACCBA9100919FAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00F16F602ABBA6E40021D4DD /* Build configuration list for PBXProject "Quotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

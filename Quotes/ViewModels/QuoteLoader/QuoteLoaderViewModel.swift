@@ -37,20 +37,22 @@ class QuoteLoaderViewModel {
     private let storage = QuotesStorageService.shared
 
     init(
-        source: QuoteSourceModel,
+        quoteSource: QuoteSourceModel,
         speechRecognition: SpeechRecognitionProtocol
     ) {
         self.speechRecognition = speechRecognition
-        switch source.source {
+        switch quoteSource.source {
         case .kanye(let url):
             self.loader = QuoteLoader<KanyeQuoteModel>(url: url)
         case .quotable(let url):
             self.loader = QuoteLoader<[QuotableQuoteModel]>(url: url)
         case .breakingBad(let url):
             self.loader = QuoteLoader<[BreakingBadQuoteModel]>(url: url)
+        case .local(let url):
+            self.loader = QuoteLoader<LocalQuoteModel>(url: url)
         }
 
-        title = source.name
+        title = quoteSource.name
 
         loader.quotePublisher
             .sink { [weak self] value in

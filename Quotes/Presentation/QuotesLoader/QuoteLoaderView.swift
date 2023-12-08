@@ -13,7 +13,7 @@ struct QuoteLoaderView<T: QuoteLoaderViewModelProtocol>: View {
     @ObservedObject var viewModel: T
 
     init(source: QuoteSourceModel) {
-        viewModel = QuoteLoaderViewModel(source: source, speechRecognition: SpeechRecognition()) as! T
+        viewModel = QuoteLoaderViewModel(quoteSource: source, speechRecognition: SpeechRecognition()) as! T
     }
 
     var body: some View {

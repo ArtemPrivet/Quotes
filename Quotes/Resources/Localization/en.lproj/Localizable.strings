@@ -9,12 +9,17 @@
 // Quotes main
 
 "quotes" = "Quotes";
+"random" = "Random";
+
+// Quote of the day
+
+"quote_of_the_day" = "Today's quote";
 
 // Favourites
 
-"favorites" = "Favorites";
-"favorites_add_quotes" = "Add quotes";
-"favorites_no_quotes_title" = "You have no favourite quotes";
+"favourites" = "Favorites";
+"favourites_add_quotes" = "Add quotes";
+"favourites_no_quotes_title" = "You have no favourite quotes";
 
 // Settings
 

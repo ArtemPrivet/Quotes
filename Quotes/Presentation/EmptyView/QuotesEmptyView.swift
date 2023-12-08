@@ -28,7 +28,7 @@ struct QuotesEmptyView: View {
 struct QuotesEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         QuotesEmptyView(bodyText: "You have no favourite quotes",
-                        buttonText: R.string.localizable.favorites_add_quotes(),
+                        buttonText: R.string.localizable.favourites_add_quotes(),
                         tabSelection: .constant(1))
     }
 }
